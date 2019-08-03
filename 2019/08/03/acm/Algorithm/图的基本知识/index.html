@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Algorithm,图论,">
+  <meta name="keywords" content="图论,Algorithm,">
 
 
 
@@ -126,14 +126,14 @@
 
 
 <meta name="description" content="图的基本知识">
-<meta name="keywords" content="Algorithm,图论">
+<meta name="keywords" content="图论,Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图的基本知识">
 <meta property="og:url" content="http://yangzuohua.top/2019/08/03/acm/Algorithm/图的基本知识/index.html">
 <meta property="og:site_name" content="YZH&#39;s blog">
 <meta property="og:description" content="图的基本知识">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-03T13:53:20.380Z">
+<meta property="og:updated_time" content="2019-08-03T15:04:43.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图的基本知识">
 <meta name="twitter:description" content="图的基本知识">
@@ -469,11 +469,11 @@
 <p><strong>时间复杂度:</strong> $O(n)$</p>
 <p><strong>空间复杂度:</strong> $O(m)$</p>
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[邻接矩阵] --&gt;B(优点)</span><br><span class="line">A --&gt;C(缺点)</span><br><span class="line">B --&gt;D(实现简单)</span><br><span class="line">B --&gt;E(可以直接查询点i与j是否有边, 如果有, 边权是多少)</span><br><span class="line">C --&gt;F(遍历效率低)</span><br><span class="line">C --&gt;G(不能存储重边)</span><br><span class="line">C --&gt;H(初始化效率低)</span><br><span class="line">C --&gt;I(大图的空间开销大, 当n比较大时, 建一个n*n的数组不现实)</span><br><span class="line">C --&gt;J(稀疏图空间利用率不高)</span><br></pre></td></tr></table></figure>
-
 <h3 id="前向星"><a href="#前向星" class="headerlink" title="前向星"></a>前向星</h3><p>前向星是一种通过存储边信息的方式存储图的数据结构。读入每条边的信息存储在数组中，把数组中的边按照起点顺序排序。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> head[maxn]; <span class="comment">//存储起点为i的第一条边的位置</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> from      <span class="comment">//起点</span></span><br><span class="line">  <span class="keyword">int</span> to;       <span class="comment">//终点</span></span><br><span class="line">  <span class="keyword">int</span> w;        <span class="comment">//权值</span></span><br><span class="line">&#125;;</span><br><span class="line">node edge[maxn];</span><br></pre></td></tr></table></figure>
-
-<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><h3 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h3><hr>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><p>邻接表是图的一种链式存储结构。对于图G中每个顶点$v_i$, 把所有邻接与$v_i$的顶点$v_j$链成一个单链表，此单链表称为顶点$v_j$的邻接表。</p>
+<h3 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h3><p>邻接表的一种实现方法存储形式，又称为邻接表的静态建表存储图的方式。链式前向星方法最开始基于前向星，目的是提高其构造效率，而最终形成的数据却是一个变形的邻接表。</p>
+<hr>
 
       
     </div>
@@ -528,9 +528,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
-          
             <a href="/tags/图论/" rel="tag"># 图论</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       

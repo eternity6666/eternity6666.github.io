@@ -466,6 +466,7 @@
 
       
         <h2 id="一般模式可用的按键说明"><a href="#一般模式可用的按键说明" class="headerlink" title="一般模式可用的按键说明"></a>一般模式可用的按键说明</h2><p>光标移动，复制粘贴，查找替换</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -473,130 +474,133 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>[Ctrl]+[f]</td>
+<tbody>
+<tr>
+<td> [Ctrl]+[f]</td>
 <td>屏幕向下移动一页, 相当于[Page Down]</td>
 </tr>
 <tr>
-<td>[Ctrl]+[b]</td>
+<td> [Ctrl]+[b]</td>
 <td>屏幕向上移动一夜, 相当于[Page Up]</td>
 </tr>
 <tr>
-<td>0</td>
+<td> 0</td>
 <td>移动到这一行的最前面字符处, 相当于[Home]</td>
 </tr>
 <tr>
-<td>$</td>
+<td> $</td>
 <td>移动到这一行的最后面字符处, 相当于[End]</td>
 </tr>
 <tr>
-<td>G</td>
+<td> G</td>
 <td>移动到这个文件的最后一行</td>
 </tr>
 <tr>
-<td>gg</td>
+<td> gg</td>
 <td>移动到这个文件的第1行, 相当于1G</td>
 </tr>
 <tr>
-<td>n[Enter]</td>
+<td> n[Enter]</td>
 <td>n为数字, 光标向下移动n行</td>
 </tr>
 <tr>
-<td>查找与替换</td>
+<td> 查找与替换</td>
 <td></td>
 </tr>
 <tr>
-<td>/word</td>
+<td> /word</td>
 <td>向下寻找一个名称为word的字符串</td>
 </tr>
 <tr>
-<td>?word</td>
+<td> ?word</td>
 <td>向上寻找一个名称为word的字符串</td>
 </tr>
 <tr>
-<td>n</td>
+<td> n</td>
 <td>n代表英文字符’n’, 表示重复前一个查找操作</td>
 </tr>
 <tr>
-<td>N</td>
+<td> N</td>
 <td>N代表英文字符’N’, 表示”反向”进行前一个查找操作</td>
 </tr>
 <tr>
-<td>:n1,n2s/word1/word2/g</td>
+<td> :n1,n2s/word1/word2/g</td>
 <td>n1与n2代表数字, 表示在第n1行与第n2行之间查找word1这个字符串, 并替换为word2</td>
 </tr>
 <tr>
-<td>:1,$s/word1/word2/g</td>
+<td> :1,$s/word1/word2/g</td>
 <td>从第1行到最后一行查找word1这个字符串并替换为word2</td>
 </tr>
 <tr>
-<td>:1,$s/word1/word2/gc</td>
+<td> :1,$s/word1/word2/gc</td>
 <td>从第1行到最后一行查找word1这个字符串并替换为word2, 且在每一次替换前都会让用户确认(comfirm)是否需要替换</td>
 </tr>
 <tr>
-<td>删除、复制与粘贴</td>
+<td> 删除、复制与粘贴</td>
 <td></td>
 </tr>
 <tr>
-<td>x</td>
+<td> x</td>
 <td>在一行字当中, 向后删除一个字符, 相当于[Delete]</td>
 </tr>
 <tr>
-<td>X</td>
+<td> X</td>
 <td>在一行字当中, 向前删除一个字符, 相当于[Backspace]</td>
 </tr>
 <tr>
-<td>dd</td>
+<td> dd</td>
 <td>删除光标所在行</td>
 </tr>
 <tr>
-<td>ndd</td>
+<td> ndd</td>
 <td>n为数字，从光标所在行开始，向下删除n行</td>
 </tr>
 <tr>
-<td>d1G</td>
+<td> d1G</td>
 <td>删除第一行到光标所在行的所有数据</td>
 </tr>
 <tr>
-<td>dG</td>
+<td> dG</td>
 <td>删除光标所在行到最后一行的所有数据</td>
 </tr>
 <tr>
-<td>d$</td>
+<td> d$</td>
 <td>删除光标所在处到该行的最后一个字符</td>
 </tr>
 <tr>
-<td>yy</td>
+<td> yy</td>
 <td>复制光标所在的那一行</td>
 </tr>
 <tr>
-<td>nyy</td>
+<td> nyy</td>
 <td>n为数字，从光标所在行开始，向下复制n行</td>
 </tr>
 <tr>
-<td>p</td>
+<td> p</td>
 <td>将已复制的数据在光标下一行粘贴</td>
 </tr>
 <tr>
-<td>P</td>
+<td> P</td>
 <td>将已复制的数据在光标上一行粘贴</td>
 </tr>
 <tr>
-<td>u</td>
+<td> u</td>
 <td>复原前一个操作</td>
 </tr>
 <tr>
-<td>[Ctrl]+[r]</td>
+<td> [Ctrl]+[r]</td>
 <td>重做上一个操作</td>
 </tr>
 <tr>
-<td>.</td>
+<td> .</td>
 <td>这是小数点’.’, 表示重复前一个操作的意思</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="一般模式切换到编辑模式的可用按键说明"><a href="#一般模式切换到编辑模式的可用按键说明" class="headerlink" title="一般模式切换到编辑模式的可用按键说明"></a>一般模式切换到编辑模式的可用按键说明</h2><p> 命令 | 说明<br> i | 进入插入模式(Insert mode), i为从目前光标所在处插入<br> I | 进入插入模式(Insert mode), I为从目前光标所在行的第一个非空格符处开始插入<br> a | 进入插入模式(Insert mode), a为从目前光标所在的下一个字符处插入<br> A | 进入插入模式(Insert mode), A为从目前光标所在行的最后一个字符处开始插入<br> o | 进入插入模式(Insert mode), 并在目前光标所在行下方插入新的一行<br> O | 进入插入模式(Insert mode), 并在目前光标所在行上方插入新的一行<br> r | 进入替换模式(Replace mode), 只替换光标所在的那一个字符一次<br> R | 进入替换模式(Replace mode)，一直替换光标所在的字符，直到按下[Esc]退出</p>
 <h2 id="一般模式切换到命令行模式的可用的按键说明"><a href="#一般模式切换到命令行模式的可用的按键说明" class="headerlink" title="一般模式切换到命令行模式的可用的按键说明"></a>一般模式切换到命令行模式的可用的按键说明</h2><p> 命令 | 说明<br> :w | 文件写入<br> :w! | 强制保存<br> :wq | 保存并退出<br> :wq! | 强制保存并退出<br> :q | 退出<br> :q! | 强制退出，如果曾经修改过文件，又不想保存<br> :w[filename] | 文本另存为[filename]<br> :r[filename] | 将[filename]这个文件内容加到光标所在行后面<br> :n1,n2 w[filename] | 将n1到n2行的文本另存为[filename]</p>
-<p> *<em>说明: *</em>以上文本部分借鉴于《鸟哥的Linux私房菜基础学习篇(第三版)》</p>
+<p> <strong>说明: </strong>以上文本部分借鉴于《鸟哥的Linux私房菜基础学习篇(第三版)》</p>
 <h2 id="补充与积累"><a href="#补充与积累" class="headerlink" title="补充与积累"></a>补充与积累</h2><p> zz | 将当前所在行置中查看<br> zb | 将当前所在行置底查看<br> zt | 将当前所在行置顶查看</p>
 
       

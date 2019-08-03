@@ -466,6 +466,7 @@
 
       
         <p>在使用Vim的过程中，经常会碰到需要查找与替换操作的情况。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -473,35 +474,38 @@
 <th>解释</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>/word</td>
 <td>向下寻找一个名称为word的字符串</td>
 </tr>
 <tr>
-<td>?word</td>
+<td> ?word</td>
 <td>向上寻找一个名称为word的字符串</td>
 </tr>
 <tr>
-<td>n</td>
+<td> n</td>
 <td>n代表英文字符’n’,表示重复前一个查找操作</td>
 </tr>
 <tr>
-<td>N</td>
+<td> N</td>
 <td>N代表英文字符’N’,表示”反向”进行前一个查找操作</td>
 </tr>
 <tr>
-<td>:n1,n2s/word1/word2/g</td>
+<td> :n1,n2s/word1/word2/g</td>
 <td>n1与n2代表数字，表示在第n1行与第n2行之间查找word1这个字符串，并替换为word2</td>
 </tr>
 <tr>
-<td>:1,$s/word1/word2/g</td>
+<td> :1,$s/word1/word2/g</td>
 <td>从第1行到最后一行查找word1这个字符串并替换为word2</td>
 </tr>
 <tr>
-<td>:1,$s/word1/word2/gc</td>
+<td> :1,$s/word1/word2/gc</td>
 <td>从第1行到最后一行查找word1这个字符串并替换为word2，且在每一次替换前都会让用户确认(comfirm)是否需要替换</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 
       
     </div>

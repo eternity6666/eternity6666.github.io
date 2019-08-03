@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="C++,STL,handbook,">
+  <meta name="keywords" content="C++,handbook,STL,">
 
 
 
@@ -126,7 +126,7 @@
 
 
 <meta name="description" content="本文将程序设计类竞赛中一些常用的STL汇总">
-<meta name="keywords" content="C++,STL,handbook">
+<meta name="keywords" content="C++,handbook,STL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="程序设计类竞赛常用STL汇总">
 <meta property="og:url" content="http://yangzuohua.top/2019/08/02/c++/程序设计类竞赛常用STL汇总/index.html">
@@ -476,13 +476,10 @@
 <li><p>访问成员变量</p>
 </li>
 </ol>
-<p>方法1 (下标访问):<br>像数组一样直接使用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vint[<span class="number">0</span>] = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-
+<p>方法1 (下标访问):<br>像数组一样直接使用<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vint[<span class="number">0</span>] = <span class="number">100</span>;</span><br></pre></td></tr></table></figure></p>
 <p>方法2 (通过迭代器访问):<br>访问前要声明与 <figure class="highlight plain"><figcaption><span>对应的迭代器:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```C++</span><br><span class="line">vector&lt;int&gt;::iterator itVint;// 这是vector&lt;int&gt; vint的迭代器</span><br><span class="line">vector&lt;string&gt;::iterator itVstring;// 这是vector&lt;string&gt; vstring的迭代器</span><br></pre></td></tr></table></figure></p>
 <p>申明之后通过begin()和end()控制访问的范围</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将vector&lt;int&gt; vint中的每一个元素输出</span></span><br><span class="line"><span class="keyword">for</span>(itVint = vint.begin(); itVint != vint.end(); itVint++)</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; *itVint &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-
 <hr>
 <h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>pair将2个数据组合成一组数据。</p>
 <p>pair是通过结构体实现的，其两个成员变量是first和second。</p>
@@ -495,7 +492,6 @@
 </li>
 <li><p>访问成员变量</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pint.first = <span class="number">123</span>; <span class="comment">// 访问第一个成员变量</span></span><br><span class="line">pint.second = <span class="number">4342</span>; <span class="comment">// 访问第二个成员变量</span></span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 
@@ -554,9 +550,9 @@
           
             <a href="/tags/C/" rel="tag"># C++</a>
           
-            <a href="/tags/STL/" rel="tag"># STL</a>
-          
             <a href="/tags/handbook/" rel="tag"># handbook</a>
+          
+            <a href="/tags/STL/" rel="tag"># STL</a>
           
         </div>
       

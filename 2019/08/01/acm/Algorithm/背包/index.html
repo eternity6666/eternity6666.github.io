@@ -466,16 +466,16 @@
 
       
         <h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>有N件物品, 背包容量为V, 每件物品 $i$ 耗费 $C_i$ , 得到的价值是 $W_i$ 。求解装入哪些物品使得价值总和最大。</p>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$F[i, v] = max { F[i - 1, v], F[i - 1, v - C_i] + W_i }$</p>
-<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><p>$F[0, 0…V] \leftarrow 0$<br>$for\ i \leftarrow 1\ to\ N$<br>&emsp;&emsp;$for\ v \leftarrow C_i\ to\ V$<br>&emsp;&emsp;&emsp;&emsp;$F[i, v]  \leftarrow max {F[i-1,v], F[i-1,v-C_i]+W_i}$</p>
-<h3 id="优化空间复杂度"><a href="#优化空间复杂度" class="headerlink" title="优化空间复杂度"></a>优化空间复杂度</h3><p>$F[0…V] \leftarrow 0$<br>$for\ i \leftarrow 1 to N$<br>&emsp;&emsp;$for\ v \leftarrow V\ to\ C_i$<br>&emsp;&emsp;&emsp;&emsp;$F[v] \larr max{F[v], F[v - C_i] + W_i}$</p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$F[i, v] = max \{ F[i - 1, v], F[i - 1, v - C_i] + W_i \}$</p>
+<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><p>$F[0, 0…V] \leftarrow 0$<br>$for\ i \leftarrow 1\ to\ N$<br>&emsp;&emsp;$for\ v \leftarrow C_i\ to\ V$<br>&emsp;&emsp;&emsp;&emsp;$F[i, v]  \leftarrow max \{F[i-1,v], F[i-1,v-C_i]+W_i\}$</p>
+<h3 id="优化空间复杂度"><a href="#优化空间复杂度" class="headerlink" title="优化空间复杂度"></a>优化空间复杂度</h3><p>$F[0…V] \leftarrow 0$<br>$for\ i \leftarrow 1 to N$<br>&emsp;&emsp;$for\ v \leftarrow V\ to\ C_i$<br>&emsp;&emsp;&emsp;&emsp;$F[v] \larr max\{F[v], F[v - C_i] + W_i\}$</p>
 <h3 id="抽象01背包问题"><a href="#抽象01背包问题" class="headerlink" title="抽象01背包问题"></a>抽象01背包问题</h3><p>$def\ ZeroOnePack(F, C, W)$<br>&emsp;&emsp;$for\ v \larr V\ to\ C$<br>&emsp;&emsp;&emsp;&emsp;$F[v] \larr max(F[v], F[v-C] + W)$</p>
 <h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><p>N件物品, 背包容量为V, 每种物品都有无限件可用，每件物品 $i$ 耗费 $C_i$ , 得到的价值是 $W_i$ 。求解装入哪些物品使得价值总和最大。</p>
-<h3 id="公式-1"><a href="#公式-1" class="headerlink" title="公式"></a>公式</h3><p>$F[i, v] = max{F[i-1, v-kC_i] + kW_i|0\le kC_i \le v}$</p>
+<h3 id="公式-1"><a href="#公式-1" class="headerlink" title="公式"></a>公式</h3><p>$F[i, v] = max\{F[i-1, v-kC_i] + kW_i|0\le kC_i \le v\}$</p>
 <h3 id="简单优化"><a href="#简单优化" class="headerlink" title="简单优化"></a>简单优化</h3><p>若 $C_i \le C_j$ 并且 $W_I\ge  W_j $，则去掉物品j, 不用考虑</p>
 <h3 id="转换为01背包求解"><a href="#转换为01背包求解" class="headerlink" title="转换为01背包求解"></a>转换为01背包求解</h3><p>考虑到第 $i$ 种物品最多选$\lfloor V / C_i \rfloor$ 件， 于是将第 $i$ 种物品转化为 $\lfloor V/C_i\rfloor$ 件费用及价值均不变的物品，然后求解01背包问题</p>
 <h3 id="O-VN-的算法"><a href="#O-VN-的算法" class="headerlink" title="$O(VN)$ 的算法"></a>$O(VN)$ 的算法</h3><p>$F[0..v]\leftarrow 0$<br>$for\ i \leftarrow 1\ to\ N$<br>&emsp;&emsp;$for\ v \larr C_i\ to\ V$<br>&emsp;&emsp;&emsp;&emsp;$F[v] \larr max(F[v], F[v-C_i] +W_i)$</p>
-<h3 id="抽象完全背包问题"><a href="#抽象完全背包问题" class="headerlink" title="抽象完全背包问题"></a>抽象完全背包问题</h3><p>$def\ CompletePack(F, C, W)$<br>&emsp;&emsp;$for\ v \larr C\ to\ V$<br>&emsp;&emsp;&emsp;&emsp;$F[v] \larr max{F[v], F[v- C] +W}$</p>
+<h3 id="抽象完全背包问题"><a href="#抽象完全背包问题" class="headerlink" title="抽象完全背包问题"></a>抽象完全背包问题</h3><p>$def\ CompletePack(F, C, W)$<br>&emsp;&emsp;$for\ v \larr C\ to\ V$<br>&emsp;&emsp;&emsp;&emsp;$F[v] \larr max\{F[v], F[v- C] +W\}$</p>
 
       
     </div>

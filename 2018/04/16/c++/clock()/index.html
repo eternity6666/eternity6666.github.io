@@ -467,21 +467,20 @@
       
         <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>判断一个算法的好坏,不但与算法的空间复杂度和巧妙有关,还和算法的时间复杂度有关.于是问题来了如何用数据表明算法的时间复杂度优劣呢?</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>C++里面提供了一个<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## CODE</span><br></pre></td></tr></table></figure></p>
-<p>#include &lt;time.h&gt;</p>
-<p>#include <iostream><br>using namespace std;</iostream></p>
-<p>int main()<br>{<br>    clock_t start,end;<br>    start=clock();<br>    int m=0;<br>    for(int i=0;i&lt;1e3;i++)<br>    {<br>        for(int j=0;j&lt;1e3;j++)<br>        {<br>            m++;<br>        }<br>    }<br>    end=clock();<br>    double n=(double)(end-start)/CLOCKS_PER_SEC;<br>    std::cout&lt;&lt;n&lt;&lt;endl;//0.002865<br>    cout&lt;&lt;n&lt;&lt;endl;//0.002865<br>    cout&lt;&lt;m&lt;&lt;endl;//1000000<br>}</p>
-<pre><code>
-## 函数介绍
+<h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <time.h></time.h></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include "></a>include <iostream></iostream></h1><p>using namespace std;</p>
+<p>int main()<br>{<br>    clock_t start,end;<br>    start=clock();<br>    int m=0;<br>    for(int i=0;i&lt;1e3;i++)<br>    {<br>        for(int j=0;j&lt;1e3;j++)<br>        {<br>            m++;<br>        }<br>    }<br>    end=clock();<br>    double n=(double)(end-start)/CLOCKS_PER_SEC;<br>    std::cout&lt;&lt;n&lt;&lt;endl;//0.002865<br>    cout&lt;&lt;n&lt;&lt;endl;//0.002865<br>    cout&lt;&lt;m&lt;&lt;endl;//1000000<br>}<br>```</p>
+<h2 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h2><p>c++的头文件ctime中的库函数clock()提供了测试函数运行时间的方法：</p>
+<ol>
+<li><p>clock()返回类型为clock_t类型</p>
+</li>
+<li><p>clock_t实际为long 类型，   typedef long clock_t</p>
+</li>
+<li><p>clock() 函数，返回从  开启这个程序进程 到 程序中调用clock（）函数 时之间的CPU时钟计时单元（clock tick）数（挂钟时间），返回单位是毫秒</p>
+</li>
+<li><p>可以用常量CLOCKS_PER_SEC， 这个常量表示每一秒（per second）有多少个时钟计时单元</p>
+</li>
+</ol>
 
-c++的头文件ctime中的库函数clock()提供了测试函数运行时间的方法：
-
-1. clock()返回类型为clock_t类型
-
-2. clock_t实际为long 类型，   typedef long clock_t
-
-3. clock() 函数，返回从  开启这个程序进程 到 程序中调用clock（）函数 时之间的CPU时钟计时单元（clock tick）数（挂钟时间），返回单位是毫秒
-
-4. 可以用常量CLOCKS_PER_SEC， 这个常量表示每一秒（per second）有多少个时钟计时单元</code></pre>
       
     </div>
     
@@ -739,7 +738,7 @@ c++的头文件ctime中的库函数clock()提供了测试函数运行时间的�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#include"><span class="nav-number"></span> <span class="nav-text">include </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-1"><span class="nav-number"></span> <span class="nav-text">include </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数介绍"><span class="nav-number">1.</span> <span class="nav-text">函数介绍</span></a></li></ol></li></div>
             
 
           </div>
