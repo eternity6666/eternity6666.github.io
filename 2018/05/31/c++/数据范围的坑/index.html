@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="YZH&#39;s blog">
 <meta property="og:description" content="由于C++的特性，在程序设计比赛中要特别注意数据范围">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-03T13:53:20.409Z">
+<meta property="og:updated_time" content="2019-08-04T09:37:50.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据范围的坑">
 <meta name="twitter:description" content="由于C++的特性，在程序设计比赛中要特别注意数据范围">
@@ -443,6 +443,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
 
           
 
@@ -465,10 +470,16 @@
       
 
       
-        <p>Theatre Square in the capital city of Berland has a rectangular shape with the size <figure class="highlight plain"><figcaption><span>× ```m``` meters. On the occasion of the city's anniversary, a decision was taken to pave the Square with square granite flagstones. Each flagstone is of the size ```a``` × ```a```.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">What is the least number of flagstones needed to pave the Square? It&apos;s allowed to cover the surface larger than the Theatre Square, but the Square has to be covered. It&apos;s not allowed to break the flagstones. The sides of flagstones should be parallel to the sides of the Square.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Input</span><br><span class="line"></span><br><span class="line">The input contains three positive integer numbers in the first line: n,  m and a (1 ≤  n, m, a ≤ 10^9).</span><br><span class="line"></span><br><span class="line">## Output</span><br><span class="line"></span><br><span class="line">Write the needed number of flagstones.</span><br><span class="line"></span><br><span class="line">## Examples</span><br><span class="line"></span><br><span class="line">**Input:**</span><br></pre></td></tr></table></figure></p>
-<p>6 6 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**Output:**</span><br></pre></td></tr></table></figure></p>
-<p>4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Code</span><br><span class="line"></span><br><span class="line">```C++</span><br><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// #define usefre</span><br><span class="line">#define ll long long</span><br><span class="line">#define ull unsigned long long</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef usefre</span><br><span class="line">    freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">    freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">    ull n, m, a;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    if (n &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        a = m;</span><br><span class="line">        m = n;</span><br><span class="line">        n = a;</span><br><span class="line">    &#125;</span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    ull ans = 0;</span><br><span class="line">    ans += (n / a) * (m / a);</span><br><span class="line">    if ((n - n / a * a) &lt; a &amp;&amp; (n - n / a * a))</span><br><span class="line">    &#123;</span><br><span class="line">        ans += m / a;</span><br><span class="line">    &#125;</span><br><span class="line">    if ((m - m / a * a) &lt; a &amp;&amp; (m - m / a * a))</span><br><span class="line">    &#123;</span><br><span class="line">        ans += n / a;</span><br><span class="line">    &#125;</span><br><span class="line">    if ((n - n / a * a) &lt; a &amp;&amp; (m - m / a * a) &lt; a &amp;&amp; (m - m / a * a) &amp;&amp; (n - n / a * a))</span><br><span class="line">    &#123;</span><br><span class="line">        ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Summraize"><a href="#Summraize" class="headerlink" title="Summraize"></a>Summraize</h2><p>这是Virtual Judge里的一道题。写代码的时候非常顺，然而一直不能AC。后来发现是ans的问题。题目要求中ans是小于10^9；然而<code>int</code>类型：-2^16~2^15-1&lt;10^9。改正后，使用unsigned long long型，AC了。</p>
+        <p>Theatre Square in the capital city of Berland has a rectangular shape with the size <code>n</code> × <code>m</code> meters. On the occasion of the city’s anniversary, a decision was taken to pave the Square with square granite flagstones. Each flagstone is of the size <code>a</code> × <code>a</code>.</p>
+<p>What is the least number of flagstones needed to pave the Square? It’s allowed to cover the surface larger than the Theatre Square, but the Square has to be covered. It’s not allowed to break the flagstones. The sides of flagstones should be parallel to the sides of the Square.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The input contains three positive integer numbers in the first line: n,  m and a (1 ≤  n, m, a ≤ 10^9).</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Write the needed number of flagstones.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p><strong>Input:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6 6 4</span><br></pre></td></tr></table></figure>
+<p><strong>Output:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// #define usefre</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> usefre</span></span><br><span class="line">    freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    ull n, m, a;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        a = m;</span><br><span class="line">        m = n;</span><br><span class="line">        n = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    ull ans = <span class="number">0</span>;</span><br><span class="line">    ans += (n / a) * (m / a);</span><br><span class="line">    <span class="keyword">if</span> ((n - n / a * a) &lt; a &amp;&amp; (n - n / a * a))</span><br><span class="line">    &#123;</span><br><span class="line">        ans += m / a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((m - m / a * a) &lt; a &amp;&amp; (m - m / a * a))</span><br><span class="line">    &#123;</span><br><span class="line">        ans += n / a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((n - n / a * a) &lt; a &amp;&amp; (m - m / a * a) &lt; a &amp;&amp; (m - m / a * a) &amp;&amp; (n - n / a * a))</span><br><span class="line">    &#123;</span><br><span class="line">        ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Summraize"><a href="#Summraize" class="headerlink" title="Summraize"></a>Summraize</h2><p>这是Virtual Judge里的一道题。写代码的时候非常顺，然而一直不能AC。后来发现是ans的问题。题目要求中ans是小于10^9；然而<code>int</code>类型：-2^16~2^15-1&lt;10^9。改正后，使用<code>unsigned long long</code>型，AC了。</p>
 <div class="table-container">
 <table>
 <thead>
@@ -581,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c++/clock()/" rel="next" title="clock()">
-                <i class="fa fa-chevron-left"></i> clock()
+              <a href="/2018/04/16/c++/clock()/" rel="next" title="C++ clock()函数简介">
+                <i class="fa fa-chevron-left"></i> C++ clock()函数简介
               </a>
             
           </div>
@@ -772,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Summraize"><span class="nav-number">1.</span> <span class="nav-text">Summraize</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">4.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summraize"><span class="nav-number">5.</span> <span class="nav-text">Summraize</span></a></li></ol></div>
             
 
           </div>
@@ -816,6 +827,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -1431,6 +1462,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

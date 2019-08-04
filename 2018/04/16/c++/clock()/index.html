@@ -128,14 +128,14 @@
 <meta name="description" content="使用C++/C语言提供的clock()函数直观的比较时间复杂度">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="clock()">
+<meta property="og:title" content="C++ clock()函数简介">
 <meta property="og:url" content="http://yangzuohua.top/2018/04/16/c++/clock()/index.html">
 <meta property="og:site_name" content="YZH&#39;s blog">
 <meta property="og:description" content="使用C++/C语言提供的clock()函数直观的比较时间复杂度">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-03T13:53:20.404Z">
+<meta property="og:updated_time" content="2019-08-04T09:36:03.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="clock()">
+<meta name="twitter:title" content="C++ clock()函数简介">
 <meta name="twitter:description" content="使用C++/C语言提供的clock()函数直观的比较时间复杂度">
 
 
@@ -172,7 +172,7 @@
 
 
 
-  <title>clock() | YZH's blog</title>
+  <title>C++ clock()函数简介 | YZH's blog</title>
   
 
 
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">clock()</h1>
+          <h1 class="post-title" itemprop="name headline">C++ clock()函数简介</h1>
         
 
         <div class="post-meta">
@@ -430,7 +430,7 @@
 
           
           
-             <span id="/2018/04/16/c++/clock()/" class="leancloud_visitors" data-flag-title="clock()">
+             <span id="/2018/04/16/c++/clock()/" class="leancloud_visitors" data-flag-title="C++ clock()函数简介">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -442,6 +442,11 @@
              </span>
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
           
 
           
@@ -466,18 +471,17 @@
 
       
         <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>判断一个算法的好坏,不但与算法的空间复杂度和巧妙有关,还和算法的时间复杂度有关.于是问题来了如何用数据表明算法的时间复杂度优劣呢?</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>C++里面提供了一个<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## CODE</span><br></pre></td></tr></table></figure></p>
-<h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <time.h></time.h></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include "></a>include <iostream></iostream></h1><p>using namespace std;</p>
-<p>int main()<br>{<br>    clock_t start,end;<br>    start=clock();<br>    int m=0;<br>    for(int i=0;i&lt;1e3;i++)<br>    {<br>        for(int j=0;j&lt;1e3;j++)<br>        {<br>            m++;<br>        }<br>    }<br>    end=clock();<br>    double n=(double)(end-start)/CLOCKS_PER_SEC;<br>    std::cout&lt;&lt;n&lt;&lt;endl;//0.002865<br>    cout&lt;&lt;n&lt;&lt;endl;//0.002865<br>    cout&lt;&lt;m&lt;&lt;endl;//1000000<br>}<br>```</p>
-<h2 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h2><p>c++的头文件ctime中的库函数clock()提供了测试函数运行时间的方法：</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>C++里面提供了一个<code>clock()</code>函数(它被<code>&lt;time.h&gt;</code>头文件收录)可以用于计算程序某个环节运行时间.</p>
+<h2 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">clock_t</span> start,end;</span><br><span class="line">    start=clock();</span><br><span class="line">    <span class="keyword">int</span> m=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1e3</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">1e3</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            m++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    end=clock();</span><br><span class="line">    <span class="keyword">double</span> n=(<span class="keyword">double</span>)(end-start)/CLOCKS_PER_SEC;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//0.002865</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//0.002865</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;m&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//1000000</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h2><p>c++的头文件<code>ctime</code>中的库函数<code>clock()</code>提供了测试函数运行时间的方法：</p>
 <ol>
-<li><p>clock()返回类型为clock_t类型</p>
+<li><p><code>clock()</code>返回类型为<code>clock_t</code>类型</p>
 </li>
-<li><p>clock_t实际为long 类型，   typedef long clock_t</p>
+<li><p><code>clock_t</code>实际为<code>long</code>类型<code>typedef long clock_t</code></p>
 </li>
-<li><p>clock() 函数，返回从  开启这个程序进程 到 程序中调用clock（）函数 时之间的CPU时钟计时单元（clock tick）数（挂钟时间），返回单位是毫秒</p>
+<li><p><code>clock()</code>函数, 返回从程序运行到程序调用<code>clock()</code>函数之间的CPU时钟计时单元(clock tick)数, 返回单位是毫秒</p>
 </li>
-<li><p>可以用常量CLOCKS_PER_SEC， 这个常量表示每一秒（per second）有多少个时钟计时单元</p>
+<li><p>常量<code>CLOCKS_PER_SEC</code>表示每一秒(per second)有多少个时钟计时单元</p>
 </li>
 </ol>
 
@@ -738,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#include"><span class="nav-number"></span> <span class="nav-text">include </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-1"><span class="nav-number"></span> <span class="nav-text">include </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数介绍"><span class="nav-number">1.</span> <span class="nav-text">函数介绍</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CODE"><span class="nav-number">3.</span> <span class="nav-text">CODE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数介绍"><span class="nav-number">4.</span> <span class="nav-text">函数介绍</span></a></li></ol></div>
             
 
           </div>
@@ -782,6 +786,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -923,7 +947,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yangzuohua.top/2018/04/16/c++/clock()/';
           this.page.identifier = '2018/04/16/c++/clock()/';
-          this.page.title = 'clock()';
+          this.page.title = 'C++ clock()函数简介';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
@@ -1397,6 +1421,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
