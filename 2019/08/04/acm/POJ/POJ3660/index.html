@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="YZH&#39;s blog">
 <meta property="og:description" content="这是一道Floyd的模板题, 这一题的数据量不大, $O(n_3)$足以解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-04T16:41:36.324Z">
+<meta property="og:updated_time" content="2019-08-05T03:11:49.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ3660">
 <meta name="twitter:description" content="这是一道Floyd的模板题, 这一题的数据量不大, $O(n_3)$足以解决">
@@ -479,17 +479,17 @@
 <center>Time Limit: 1000MS   Memory Limit: 65536K
 </center>
 
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>$N (1 ≤ N ≤ 100)$ cows, conveniently numbered $1..N$, are participating in a programming contest. As we all know, some cows code better than others. Each cow has a certain constant skill rating that is unique among the competitors.</p>
-<p>The contest is conducted in several head-to-head rounds, each between two cows. If cow $A$ has a greater skill level than cow $B (1 ≤ A ≤ N; 1 ≤ B ≤ N; A ≠ B)$, then cow A will always beat cow $B$.</p>
-<p>Farmer John is trying to rank the cows by skill level. Given a list the results of $M (1 ≤ M ≤ 4,500)$ two-cow rounds, determine the number of cows whose ranks can be precisely determined from the results. It is guaranteed that the results of the rounds will not be contradictory.</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Line 1: Two space-separated integers: N and M</p>
-<p>Lines 2..M+1: Each line contains two space-separated integers that describe the competitors and results (the first integer, A, is the winner) of a single round of competition: A and B</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><code>N (1≤N≤100)</code> cows, conveniently numbered <code>1..N</code>, are participating in a programming contest. As we all know, some cows code better than others. Each cow has a certain constant skill rating that is unique among the competitors.</p>
+<p>The contest is conducted in several head-to-head rounds, each between two cows. If cow <code>A (1≤A≤N)</code> has a greater skill level than cow <code>B (1≤B≤N; A≠B)</code>, then cow A will always beat cow <code>B</code>.</p>
+<p>Farmer John is trying to rank the cows by skill level. Given a list the results of <code>M (1≤M≤4500)</code> two-cow rounds, determine the number of cows whose ranks can be precisely determined from the results. It is guaranteed that the results of the rounds will not be contradictory.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Line 1: Two space-separated integers: <code>N</code> and <code>M</code></p>
+<p>Lines 2..M+1: Each line contains two space-separated integers that describe the competitors and results (the first integer, <code>A</code>, is the winner) of a single round of competition: <code>A</code> and <code>B</code></p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Line 1: A single integer representing the number of cows whose ranks can be determined</p>
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5 5</span><br><span class="line">4 3</span><br><span class="line">4 2</span><br><span class="line">3 2</span><br><span class="line">1 2</span><br><span class="line">2 5</span><br></pre></td></tr></table></figure>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
 <h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><p><a href="http://poj.org/searchproblem?field=source&amp;key=USACO+2008+January+Silver" target="_blank" rel="noopener">USACO 2008 January Silver</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><strong>题意:</strong></p>
-<p>$n(1&lt;=n&lt;=100)$个人参加比赛, 有$m(1&lt;=m&lt;=4500)$条实力信息, 对于每一条信息$A B(1&lt;=A,B&lt;=n, A!=B)$表示A的实力比B强.</p>
+<p><code>n (1≤n≤100)</code>个人参加比赛, 有<code>m (1≤m≤4500)</code>条实力信息, 对于每一条信息<code>A B(1≤A,B≤n, A!=B)</code>表示<code>A</code>的实力比<code>B</code>强.</p>
 <p>在保证输入信息不矛盾的情况下, 求最后有多少个人可以确定自己的排名.</p>
 <p><strong>思路:</strong></p>
 <p>Floyd的模板题.</p>
