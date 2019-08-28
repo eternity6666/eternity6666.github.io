@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yangzuohua.top/2018/02/28/linux/git/2018-02-28-向git添加和提交文件/">
+    <link itemprop="mainEntityOfPage" href="http://yangzuohua.top/2018/02/28/linux/git/2018-02-28-git差异比较及版本检出/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="eternity6666">
@@ -370,7 +370,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/28/linux/git/2018-02-28-向git添加和提交文件/" itemprop="url">向Git添加和提交文件</a></h1>
+                <a class="post-title-link" href="/2018/02/28/linux/git/2018-02-28-git差异比较及版本检出/" itemprop="url">Git差异比较及版本检出</a></h1>
         
 
         <div class="post-meta">
@@ -434,8 +434,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/28/linux/git/2018-02-28-向git添加和提交文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/28/linux/git/2018-02-28-向git添加和提交文件/" itemprop="commentCount"></span>
+                <a href="/2018/02/28/linux/git/2018-02-28-git差异比较及版本检出/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/28/linux/git/2018-02-28-git差异比较及版本检出/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -443,7 +443,7 @@
 
           
           
-             <span id="/2018/02/28/linux/git/2018-02-28-向git添加和提交文件/" class="leancloud_visitors" data-flag-title="向Git添加和提交文件">
+             <span id="/2018/02/28/linux/git/2018-02-28-git差异比较及版本检出/" class="leancloud_visitors" data-flag-title="Git差异比较及版本检出">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -477,13 +477,14 @@
         
           
           
-Git状态：status```123Git三个区：工作区，缓存区，版本库由工作区提交至缓存区：```git add
-由缓存区提交至版本库:git commit
-
-          
+master时刻指向最新的提交
+head标签指向一个分支
+Git各个工作区的差异比较工作区与缓存区的差异比较:diff```12缓存区与版本库的差异比较:```git diff --cached
+版本库与工作区的差异比较:diff HEAD```12345##### Git版本检出###### 取
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/linux/git/2018-02-28-向git添加和提交文件/#more" rel="contents">
+            <a class="btn" href="/2018/02/28/linux/git/2018-02-28-git差异比较及版本检出/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1044,6 +1045,39 @@ Git状态：status```123Git三个区：工作区，缓存区，版本库由工�
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unjkp.com/valine/dist/Valine.min.js"></script>  //删除Valine核心代码库外链调用
+  <script src="/js/src/Valine.min.js"></script>  //调用刚下载的本地文件以加速加载速度
+
+    //这里改为从本地加载
+  
+  <script src="/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: 'MLkVPpXXYyXNMBqDizcfs01p-gzGzoHsz',
+        appKey: 'bsI6XANl3BjLDyw8BPBT7VQP',
+        placeholder: 'Just go go',
+        avatar:'hide',
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        pageSize:'10' || 10,
+    });
+    //增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+  </script>
 
 
   
