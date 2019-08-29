@@ -936,10 +936,10 @@
   (function() {
     window.addEventListener('DOMContentLoaded', () => {
       let script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js';
+      script.src = '/lib/three/three.min.js';
       document.body.appendChild(script);
     });
-    let styles = ['//cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/three-waves.min.js', '', ''];
+    let styles = ['/lib/three/three-waves.min.js', '', ''];
     window.addEventListener('load', () => {
       styles.forEach(item => {
         if (item !== '') {
