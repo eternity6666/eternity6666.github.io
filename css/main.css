@@ -1002,30 +1002,23 @@ pre .javascript .function {
   padding-top: 0;
 }
 .back-to-top {
-  background: #eee;
-  cursor: pointer;
-  font-size: 12px;
-  margin: 8px -10px -20px;
-  opacity: 0.6;
-  text-align: center;
-  visibility: hidden;
-}
-.back-to-top span {
   display: none;
+  margin: 20px -10px -20px;
+  background: #eee;
+  font-size: 12px;
+  opacity: 0.6;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 .back-to-top:hover {
   opacity: 0.8;
 }
-@media (max-width: 991px) {
-  .back-to-top {
-    display: none;
-  }
-}
 .back-to-top.back-to-top-on {
-  visibility: visible;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
+  display: block;
 }
 .header {
   background: transparent;
@@ -1781,7 +1774,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #eb060e;
+  background: #ff4495;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
